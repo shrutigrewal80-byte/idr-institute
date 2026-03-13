@@ -1,0 +1,104 @@
+/* Styling based on requirements [cite: 3, 16, 17, 18] */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primary-orange: #FF6600; /*  */
+    --black: #000000;
+    --white: #ffffff;
+    --grey: #f4f4f4;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--black);
+}
+
+/* Sticky Nav [cite: 17] */
+header {
+    background: var(--black);
+    color: var(--white);
+    padding: 15px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Cube Logo [cite: 2] */
+.cube-icon {
+    width: 25px;
+    height: 25px;
+    background: var(--primary-orange);
+    border: 2px solid var(--white);
+    transform: rotate(45deg);
+}
+
+.logo-container { display: flex; align-items: center; gap: 12px; }
+.logo-text { font-weight: 700; font-size: 1.1rem; }
+
+nav ul { display: flex; list-style: none; }
+nav ul li a { color: white; text-decoration: none; margin-left: 20px; transition: 0.3s; }
+nav ul li a:hover { color: var(--primary-orange); } /* Hover state [cite: 18] */
+
+/* Hero Section [cite: 8] */
+.hero {
+    height: 70vh;
+    background: var(--black);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero h1 { font-size: 2.5rem; margin-bottom: 15px; color: var(--primary-orange); }
+
+.cta-btn {
+    background: var(--primary-orange);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    text-decoration: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Grid for Services [cite: 11, 16] */
+.container { padding: 60px 10%; }
+.bg-light { background: var(--grey); }
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-left: 5px solid var(--primary-orange);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Form [cite: 15] */
+form { display: flex; flex-direction: column; gap: 15px; max-width: 500px; }
+input, textarea { padding: 10px; border: 1px solid #ccc; width: 100%; }
+
+/* Mobile Responsive  */
+@media (max-width: 768px) {
+    nav ul { display: none; }
+    .hero h1 { font-size: 1.8rem; }
+}
